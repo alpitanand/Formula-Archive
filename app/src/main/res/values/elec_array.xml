@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="ele_name">
+        <item>Abbreviation</item>
+        <item>Ohm law</item>
+        <item>Resistor Codes</item>
+        <item>Circuit Symbol</item>
+        <item>Basic Defination</item>
+        <item>Electronic Circuit</item>
+        <item>EM Spectrum</item>
+        <item>Greek Symbol</item>
+
+        <item>Important Frequency</item>
+        <item>Number System</item>
+        <item>Signal</item>
+        <item>Constants and standards</item>
+
+
+    </string-array>
+
+    <array name="ele_images">
+        <item>@drawable/abbreviation</item>
+        <item>@drawable/ohm</item>
+        <item>@drawable/resistors</item>
+        <item>@drawable/circuit</item>
+        <item>@drawable/defination</item>
+        <item>@drawable/circuits</item>
+        <item>@drawable/spectrum</item>
+        <item>@drawable/greeks</item>
+
+
+        <item>@drawable/frequency</item>
+        <item>@drawable/system</item>
+        <item>@drawable/signal</item>
+        <item>@drawable/standardss</item>
+      </array>
+
+    <string-array name="ele_descrip">
+        <item>All electronic abbreviations</item>
+        <item>Ohm law,Capacitor network,Resistor network</item>
+        <item>Resistor coding and its abbreviations</item>
+        <item>resistors,diodes,leds,solar cell,photo resistor,switches,relay,lamp etc</item>
+        <item>current,voltage,resistance,power,potential difference</item>
+        <item>half wave,full wave rectifier,voltage doubler</item>
+        <item>Spectrum of gamma rays,x-rays,uv rays,infrared,microwaves,radio waves</item>
+        <item>greek alphabaet and their symbols</item>
+        <item>all important frequencies</item>
+        <item>Number system,Decimal,binary,BCD,HEX </item>
+        <item>amplitude modulation,pulse,digital modulated wave,periodic waves</item>
+        <item>U.S weights and measures,metric wights and measures</item>
+
+    </string-array>
+
+</resources>

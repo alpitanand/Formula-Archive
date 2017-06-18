@@ -15,9 +15,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
+
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyViewHolder> {
     String[] tittle;
     Drawable[] picture;
+
 
     public RecyclerAdapter(Context context) {
         Resources re = context.getResources();
@@ -53,12 +59,13 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
     public class MyViewHolder extends RecyclerView.ViewHolder {
         public TextView tx_title;
         public ImageView im_img;
-
         public MyViewHolder(final View itemView) {
             super(itemView);
+
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+
                     if (getAdapterPosition() == 1) {
                         itemView.getContext().startActivity(new Intent(itemView.getContext(), Physics.class));
                     }
@@ -66,7 +73,21 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
                     {
                         itemView.getContext().startActivity(new Intent(itemView.getContext(), Unitconversion.class));
                     }
+                    if (getAdapterPosition() == 5) {
+                        itemView.getContext().startActivity(new Intent(itemView.getContext(), Scientist.class));
+                    }
+                    if (getAdapterPosition() == 2) {
+                        itemView.getContext().startActivity(new Intent(itemView.getContext(), Chemistry.class));
+                    }
+                    if (getAdapterPosition() == 0) {
+                        itemView.getContext().startActivity(new Intent(itemView.getContext(), Maths.class));
+                    }
+                    if (getAdapterPosition() == 3) {
+                        itemView.getContext().startActivity(new Intent(itemView.getContext(), Electrical.class));
+                    }
+
                 }
+
             });
             tx_title = (TextView) itemView.findViewById(R.id.title);
             im_img=(ImageView)itemView.findViewById(R.id.image);

@@ -23,6 +23,7 @@ public class FavoritePage extends AppCompatActivity implements OnItemClickListen
         ArrayAdapter<String> arr2 = new ArrayAdapter<String>(getApplicationContext(), R.layout.simple_colum, db.getalllist());
         lv.setAdapter(arr2);
         lv.setDivider(null);
+        setTitle("Favorites");
     }
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

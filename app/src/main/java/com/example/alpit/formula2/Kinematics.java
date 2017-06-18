@@ -19,58 +19,51 @@ import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 
-public class Kinematics extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, CompoundButton.OnCheckedChangeListener {
-    private DrawerLayout drawerLayout;
-    private NavigationView navigationView;
-    private ActionBarDrawerToggle phy_law_toggel;
-    private Toolbar toolbar;
-    private WebView webView;
-    private FloatingActionButton floatingActionButton;
-    private RelativeLayout relativeLayout;
-    private CheckBox checkBox;
-    public DataBaseHandler db;
-int c=0;
+public class Kinematics extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener,CompoundButton.OnCheckedChangeListener{
+        private DrawerLayout gdrawerLayout;
+        private NavigationView gnavigationView;
+        private ActionBarDrawerToggle gravity_law_toggel;
+        private Toolbar gtoolbar;
+        private WebView gwebView;
+        private CheckBox checkBox12;
+        private DataBaseHandler db;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kinematics);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.phy_lawtoolbar);
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.gravity_lawtoolbar);
         setSupportActionBar(toolbar);
-        setTitle(R.string.Kinematics);
-        relativeLayout = (RelativeLayout) findViewById(R.id.relative);
-        drawerLayout = (DrawerLayout) findViewById(R.id.phy_draw);
-        navigationView = (NavigationView) findViewById(R.id.nav_view_phy);
-        phy_law_toggel = new ActionBarDrawerToggle(this, drawerLayout, R.string.open, R.string.Close);
-        drawerLayout.addDrawerListener(phy_law_toggel);
-        toolbar = (Toolbar) findViewById(R.id.phy_lawtoolbar);
+        setTitle("");
+        gdrawerLayout = (DrawerLayout) findViewById(R.id.gravity_draw);
+        gnavigationView = (NavigationView) findViewById(R.id.nav_view_gravity);
+        gravity_law_toggel = new ActionBarDrawerToggle(this, gdrawerLayout, R.string.open, R.string.Close);
+        gnavigationView.setNavigationItemSelectedListener(this);
+        gdrawerLayout.addDrawerListener(gravity_law_toggel);
+        gtoolbar = (Toolbar) findViewById(R.id.gravity_lawtoolbar);
         setSupportActionBar(toolbar);
-        phy_law_toggel.syncState();
-        checkBox = (CheckBox) findViewById(R.id.fav);
-        checkBox.setChecked(getAsp("checkbox"));
-        checkBox.setOnCheckedChangeListener(this);
+        checkBox12 = (CheckBox) findViewById(R.id.fav1);
+        checkBox12.setChecked(getAsp("checkbox2"));
+        checkBox12.setOnCheckedChangeListener(this);
+        gravity_law_toggel.syncState();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        navigationView.setItemIconTintList(null);
-        webView = (WebView) findViewById(R.id.phy_law_web);
-        webView.getSettings().setJavaScriptEnabled(true);
-        webView.getSettings().setBuiltInZoomControls(false);
-        webView.loadUrl("file:///android_asset/mathscribe/Kinematics.html");
-        floatingActionButton = (FloatingActionButton) findViewById(R.id.fab);
+        gnavigationView.setItemIconTintList(null);
+        gwebView = (WebView) findViewById(R.id.gravity_law_web);
+        gwebView.getSettings().setJavaScriptEnabled(true);
+        gwebView.getSettings().setBuiltInZoomControls(true);
+        gwebView.loadUrl("file:///android_asset/mathscribe/Kinematics.html");
+        db = new DataBaseHandler(this);
+        FloatingActionButton floatingActionButton = (FloatingActionButton) findViewById(R.id.fab);
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                webView.scrollTo(0, 0);
+                gwebView.scrollTo(0, 0);
             }
         });
-        navigationView.setNavigationItemSelectedListener(this);
-      db = new DataBaseHandler(this);
-
-
     }
 
-
-    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if (phy_law_toggel.onOptionsItemSelected(item)) {
+        if(gravity_law_toggel.onOptionsItemSelected(item)){
             return true;
         }
         return super.onOptionsItemSelected(item);
@@ -78,39 +71,67 @@ int c=0;
 
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
-        int id = item.getItemId();
-        if (id == R.id.favourite) {
-            startActivity(new Intent(getApplicationContext(), FavoritePage.class));
+        int id=item.getItemId();
+        if(id==R.id.favourite)
+        {
+            startActivity(new Intent(getApplicationContext(),FavoritePage.class));
         }
-        drawerLayout.closeDrawer(GravityCompat.START);
+        else if (id == R.id.nav_maths) {
+            startActivity(new Intent(getApplicationContext(), Maths.class));
+        }
+        else if (id == R.id.nav_physics) {
+            startActivity(new Intent(getApplicationContext(), Physics.class));
+        }
+        else if (id == R.id.nav_chem) {
+            startActivity(new Intent(getApplicationContext(), Chemistry.class));
+        }
+        else if (id == R.id.EEE) {
+            startActivity(new Intent(getApplicationContext(), Electrical.class));
+        }
+        else if (id == R.id.unitconversion) {
+            startActivity(new Intent(getApplicationContext(), Unitconversion.class));
+        }
+        else if (id == R.id.Scientist) {
+            startActivity(new Intent(getApplicationContext(), Scientist.class));
+        }
+        else if (id == R.id.Share) {
+            Toast.makeText(getApplication().getApplicationContext(),"Will be available in the next update",Toast.LENGTH_LONG).show();
+        }
+        else if (id == R.id.ads) {
+            Toast.makeText(getApplication().getApplicationContext(),"Will be available in the next update",Toast.LENGTH_LONG).show();
+        }
+        else if (id == R.id.aboutus) {
+            startActivity(new Intent(getApplicationContext(), Aboutus.class));
+        }
+        gdrawerLayout.closeDrawer(GravityCompat.START);
         return true;
     }
 
 
-    public void onCheckedChanged(CompoundButton buttonView, boolean check1) {
-        if (checkBox.isChecked()) {
+    @Override
+    public void onCheckedChanged(CompoundButton buttonView, boolean check2) {
+        if (checkBox12.isChecked()) {
 
-            saveInSp("checkbox", check1);
+            saveInSp("checkbox2", check2);
             db.add_activity(this.getClass().getSimpleName());
-        } else if (!checkBox.isChecked()) {
+        } else if (!checkBox12.isChecked()) {
 
-            saveInSp("checkbox", check1);
+            saveInSp("checkbox2", check2);
             db.del_activity(this.getClass().getSimpleName());
         }
 
-    }
 
+    }
     private boolean getAsp(String key) {
-        SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("ALpit", android.content.Context.MODE_PRIVATE);
+        SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("Alpit", android.content.Context.MODE_PRIVATE);
         return sharedPreferences.getBoolean(key,false);
     }
 
     private void saveInSp(String key, boolean value) {
-        SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("ALpit", android.content.Context.MODE_PRIVATE);
+        SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("Alpit", android.content.Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putBoolean(key, value);
         editor.apply();
     }
-
 
 }

@@ -28,20 +28,19 @@
     <group
         android:id="@+id/gp2"
         android:checkableBehavior="single">
-    <item
+        <item
+            android:id="@+id/favourite"
+            android:icon="@drawable/favourite"
+            android:title="Favourite" />
+        <item
         android:id="@+id/unitconversion"
         android:icon="@drawable/unitconversion"
-        android:title="Unit Conversion" />
+        android:title="Cheat Tools" />
         <item
             android:id="@+id/Scientist"
             android:icon="@drawable/scientist"
             android:title="Scientist" />
 
-
-        <item
-        android:id="@+id/favourite"
-        android:icon="@drawable/favourite"
-        android:title="Favourite" />
 </group>
 
     <group
@@ -51,10 +50,6 @@
         android:id="@+id/Share"
         android:icon="@drawable/share"
         android:title="Share" />
-    <item
-        android:id="@+id/Rate"
-        android:icon="@drawable/rate"
-        android:title="Rate" />
     <item
         android:id="@+id/ads"
         android:icon="@drawable/ad"

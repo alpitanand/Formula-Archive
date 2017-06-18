@@ -62,37 +62,52 @@ public TextView tx_phy,tx_phydes;
             @Override
             public void onClick(View view) {
                 if(getAdapterPosition()==0)
-                {itemView.getContext().startActivity(new Intent(itemView.getContext(),Kinematics.class));
+                {itemView.getContext().startActivity(new Intent(itemView.getContext(),Laws_motion_motion.class));
                 }
                 if(getAdapterPosition()==1)
-                {itemView.getContext().startActivity(new Intent(itemView.getContext(),Gravitation.class));
+                {itemView.getContext().startActivity(new Intent(itemView.getContext(),Kinematics.class));
                 }
                 if(getAdapterPosition()==2)
-                {itemView.getContext().startActivity(new Intent(itemView.getContext(),Mechanics.class));
+                {itemView.getContext().startActivity(new Intent(itemView.getContext(),Gravitation.class));
                 }
                 if(getAdapterPosition()==3)
-                {itemView.getContext().startActivity(new Intent(itemView.getContext(),Hydrodynamics.class));
+                {itemView.getContext().startActivity(new Intent(itemView.getContext(),Mechanics.class));
                 }
                 if(getAdapterPosition()==4)
-                {itemView.getContext().startActivity(new Intent(itemView.getContext(),Shm.class));
+                {itemView.getContext().startActivity(new Intent(itemView.getContext(),Hydrodynamics.class));
                 }
                 if(getAdapterPosition()==5)
-                {itemView.getContext().startActivity(new Intent(itemView.getContext(),Waves.class));
+                {itemView.getContext().startActivity(new Intent(itemView.getContext(),Shm.class));
                 }
                 if(getAdapterPosition()==6)
-                {itemView.getContext().startActivity(new Intent(itemView.getContext(),Interference.class));
+                {itemView.getContext().startActivity(new Intent(itemView.getContext(),Waves.class));
                 }
                 if(getAdapterPosition()==7)
-                {itemView.getContext().startActivity(new Intent(itemView.getContext(),Electromagneticwaves.class));
+                {itemView.getContext().startActivity(new Intent(itemView.getContext(),Interference.class));
                 }
                 if(getAdapterPosition()==8)
-                {itemView.getContext().startActivity(new Intent(itemView.getContext(),Modernphysics.class));
+                {itemView.getContext().startActivity(new Intent(itemView.getContext(),Electric_force_field.class));
                 }
                 if(getAdapterPosition()==9)
-                {itemView.getContext().startActivity(new Intent(itemView.getContext(),Thermalexpansion.class));
+                {itemView.getContext().startActivity(new Intent(itemView.getContext(),Electromagneticwaves.class));
                 }
                 if(getAdapterPosition()==10)
+                {itemView.getContext().startActivity(new Intent(itemView.getContext(),Modernphysics.class));
+                }
+                if(getAdapterPosition()==11)
+                {itemView.getContext().startActivity(new Intent(itemView.getContext(),Thermalexpansion.class));
+                }
+                if(getAdapterPosition()==12)
                 {itemView.getContext().startActivity(new Intent(itemView.getContext(),Thermodynamics.class));
+                }
+                if(getAdapterPosition()==13)
+                {itemView.getContext().startActivity(new Intent(itemView.getContext(),Capacitance.class));
+                }
+                if(getAdapterPosition()==14)
+                {itemView.getContext().startActivity(new Intent(itemView.getContext(),Electriccurrent_and_dc.class));
+                }
+                if(getAdapterPosition()==15)
+                {itemView.getContext().startActivity(new Intent(itemView.getContext(),Magnetic_effect_of_current.class));
                 }
 
             }

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="mat_name">
+    <item>Algebra Formulas</item>
+    <item>Functions formula</item>
+    <item>Analytic Geometry </item>
+    <item>Limits and Derivative</item>
+    <item>Indefinite Integrals</item>
+    <item>Definite integrals</item>
+    <item>Series formula</item>
+    <item>Laplace formulas</item>
+        <item>Most popular formulas</item>
+
+    </string-array>
+
+    <string-array name="mat_img">
+    <item>@drawable/algebra</item>
+    <item>@drawable/function</item>
+    <item>@drawable/geometry</item>
+    <item>@drawable/limits</item>
+    <item>@drawable/integrals</item>
+    <item>@drawable/deifintie</item>
+    <item>@drawable/series</item>
+    <item>@drawable/laplace</item>
+        <item>@drawable/most</item>
+
+    </string-array>
+
+    <string-array name="mat_descript">
+    <item>Set identities,numbers,Complex numbers,Factoring and product,equations</item>
+    <item>Exponents,Roots,Logarithm,Trigonometry,Hyperbolic</item>
+    <item>Lines in 2D,Trinagles in 2D,Circle,Conic sections,Lines in 3D,Planes in 3D</item>
+    <item>Limits,Common derivatives,Higher-order Derivatives</item>
+    <item>Common integrals,Rational,Exponential,Logarithmic,Trigonometric</item>
+    <item>Rational functons,Trigonometric,Exponential,Logarithmic</item>
+    <item>Arith. and Geom. Series,Power,Taylor series</item>
+    <item>laplace formulas</item>
+        <item>Most important and common formulas</item>
+
+    </string-array>
+    </resources>
